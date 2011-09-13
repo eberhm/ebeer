@@ -5,7 +5,7 @@
  * @version $Id: $
  * @category Application
  * @package Widget
- * @copyright (c) Copyright Emagister
+ * @copyright (c) Copyright ebeer-MVC
  */
 
 /**

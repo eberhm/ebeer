@@ -1,16 +1,16 @@
 /**
- * Emagister
+ * ebeer-MVC
  *
  *
  * @version $Id: $
  * @category Application
  * @package Element
- * @copyright (c) Copyright Emagister
+ * @copyright (c) Copyright ebeer-MVC
  */
 
  /**
  * This Element is used to control the async login feature of the web.
- * Contempletes both the normal Emagister login and the one trought Facebook Connect.
+ * Contempletes both the normal ebeer-MVC login and the one trought Facebook Connect.
  * 
  * @category Application
  * @package Element

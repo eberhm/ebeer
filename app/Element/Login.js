@@ -1,16 +1,16 @@
 /**
- * Emagister
+ * ebeer-MVC
  *
  *
  * @version $Id: $
  * @category Application
  * @package Element
- * @copyright (c) Copyright Emagister
+ * @copyright (c) Copyright ebeer-MVC
  */
 
  /**
  * This Element is used to control the async login feature of the web.
- * Contempletes both the normal Emagister login and the one trought Facebook Connect.
+ * Contempletes both the normal ebeer-MVC login and the one trought Facebook Connect.
  * 
  * @category Application
  * @package Element
@@ -137,23 +137,23 @@ Element_Login.prototype._initAuthPlaceholder = function(jContent) {
 		jContent.find(".auth-lnk").removeClass("active");
 		$(this).parent().addClass("active");
 		jContent.find(".facebook-login").fadeIn("normal");
-		jContent.find(".emagister-register, .emagister-login").hide();
+		jContent.find(".ebeer-MVC-register, .ebeer-MVC-login").hide();
 		
 	});
-	jContent.find(".app_showLoginEmagister").click(function(e) {
+	jContent.find(".app_showLoginebeer-MVC").click(function(e) {
 		e.preventDefault();
 		jContent.find(".auth-lnk").removeClass("active");
         $(this).parent().addClass("active");
-		jContent.find(".emagister-login").fadeIn("normal");
-		jContent.find(".emagister-register, .facebook-login").hide();
+		jContent.find(".ebeer-MVC-login").fadeIn("normal");
+		jContent.find(".ebeer-MVC-register, .facebook-login").hide();
 		
 	});
-	jContent.find(".app_showRegisterEmagister").click(function(e) {
+	jContent.find(".app_showRegisterebeer-MVC").click(function(e) {
 		e.preventDefault();
 		jContent.find(".auth-lnk").removeClass("active");
         $(this).parent().addClass("active");
-		jContent.find(".emagister-register").fadeIn("normal");
-		jContent.find(".facebook-login, .emagister-login").hide();
+		jContent.find(".ebeer-MVC-register").fadeIn("normal");
+		jContent.find(".facebook-login, .ebeer-MVC-login").hide();
 		
 	});
 	jContent.find(".app_sendAsyncRegister").click(function(e) {

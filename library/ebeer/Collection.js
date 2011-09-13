@@ -1,11 +1,11 @@
 
 /**
- * EMagister
+ * ebeer-MVC
  *
  * @version    $Id: Collection.js 33369 2010-03-24 11:35:41Z iargent $
  * @category   Gsi
  * @package    Controller
- * @copyright  (c) Copyright Emagister.
+ * @copyright  (c) Copyright ebeer-MVC.
  * @link       
  */
 /**

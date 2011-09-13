@@ -1,11 +1,11 @@
 /**
- * Emagister
+ * ebeer-MVC
  *
  *
  * @version $Id: $
  * @category Application
  * @package Model
- * @copyright (c) Copyright Emagister
+ * @copyright (c) Copyright ebeer-MVC
  */
 
 /**

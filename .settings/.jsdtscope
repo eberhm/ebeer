@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="Login/" kind="src" path="app/Element"/>
+	<classpathentry kind="src" path="app/Element/Login"/>
+	<classpathentry kind="src" path="app/Model"/>
+	<classpathentry kind="src" path="app/Widget"/>
+	<classpathentry excluding="Element/|Manager/" kind="src" path="library/ebeer"/>
+	<classpathentry kind="src" path="library/ebeer/Element"/>
+	<classpathentry kind="src" path="library/ebeer/Manager"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+</classpath>
