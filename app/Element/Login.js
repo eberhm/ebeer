@@ -16,21 +16,21 @@
  * @package Element
  * @constructor
  */
-var Element_Login = function() {
+var TestApp_Element_Login = function() {
 };
 
-Element_Login.prototype.placeholder = null;
+TestApp_Element_Login.prototype.placeholder = null;
 
 /**
  * This method is used to display the boxy in case that it already exist and creates it if is not.
  * When the boxy is created an async call is made to the server in order to retrieve the signup and login forms.
  */
-Element_Login.prototype.show = function(position) {
+TestApp_Element_Login.prototype.show = function(position) {
 	//to be implemented in the concrete class
 	throw Exception('Method not implemented in the concrete class');
 };
 
-Element_Login.prototype.hide = function(callback) {
+TestApp_Element_Login.prototype.hide = function(callback) {
 	//to be implemented in the concrete class
 	throw Exception('Method not implemented in the concrete class');
 };
@@ -42,7 +42,7 @@ Element_Login.prototype.hide = function(callback) {
  * 0 - Everything was ok, user created, logged in and being redirecting.
  * 1- Some of the required fields responses an error, a tooltip is showed.
  */
-Element_Login.prototype._makeRegisterRequest = function() {
+TestApp_Element_Login.prototype._makeRegisterRequest = function() {
 	var _mthis = this;
 	this.loader.on(true);
 	
@@ -79,7 +79,7 @@ Element_Login.prototype._makeRegisterRequest = function() {
  *     errCode 0 stablishes that everything goes fine. The User is now logged. The User Module also triggers a refresh event.
  *     errCode 1 is used to return an error in one of the fields or of any other kind. 
  */
-Element_Login.prototype._makeLoginRequest = function() {
+TestApp_Element_Login.prototype._makeLoginRequest = function() {
 	var _mthis = this;
 	this.loader.on(true);
 	
@@ -116,11 +116,11 @@ Element_Login.prototype._makeLoginRequest = function() {
  * This method is used to do the reInitialization of the Facebook API in order to attach
  * the needed functionallity to the 'Facebook Connect' button that loads asincroniusly.
  */
-Element_Login.prototype._reInitFacebookAPI = function() {
+TestApp_Element_Login.prototype._reInitFacebookAPI = function() {
     FB.init({appId: _egc.facebookAppId, status: true, cookie: true, xfbml: true, oauth: true});
 };
 
-Element_Login.prototype.tryLoginSuccess = function(position) {
+TestApp_Element_Login.prototype.tryLoginSuccess = function(position) {
 	if ((app.activeEntity) && (app.activeEntity.type == "user")) {
 		this._settings.onLoginSuccess();
 	} else {
@@ -129,7 +129,7 @@ Element_Login.prototype.tryLoginSuccess = function(position) {
 };
 
 
-Element_Login.prototype._initAuthPlaceholder = function(jContent) {
+TestApp_Element_Login.prototype._initAuthPlaceholder = function(jContent) {
 	var _mthis = this;
 	
 	jContent.find(".app_showLoginFB").click(function(e) {
@@ -225,7 +225,7 @@ Element_Login.prototype._initAuthPlaceholder = function(jContent) {
 /**
  * This method is used by the Widget Controller to inicialize the widget. 
  */
-Element_Login.prototype.init = function(settings) {
+TestApp_Element_Login.prototype.init = function(settings) {
 	var _mthis = this;
 	
 	this._settings = {

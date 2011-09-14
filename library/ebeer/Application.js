@@ -29,11 +29,6 @@ Application.prototype.init = function() {
     this.users = new Collection(function(id) {
     	return new Model_User(id);
     });
-    this.centers = new Collection(function(id) {
-    	return new Model_Center(id);
-    });
-    
-    this.geoip = new Model_GeoIp(); //'148.243.168.33' Mexico DF '200.58.72.104' Bolivia
 };
 
 /**

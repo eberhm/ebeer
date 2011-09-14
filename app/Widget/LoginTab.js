@@ -15,28 +15,28 @@
  * @package Widget
  * @constructor
  */
-var Widget_AjaxImageUploader = function(){
+var TestApp_Widget_LoginTab = function(){
 };
 
-Widget_AjaxImageUploader.prototype = new Widget();
+TestApp_Widget_LoginTab.prototype = new Widget();
 
 /**
  * Indicates the name of the widget.
  * @type String
  */
-Widget_AjaxImageUploader.prototype.name = 'ajaximageuploader';
+TestApp_Widget_LoginTab.prototype.name = 'LoginTab';
 
 /**
  * Sets the inicialization number order of the widget.
  * Goes between 1 and 9 and is used commonly for resolve widgets dependecies.
  * @type Int
  */
-Widget_AjaxImageUploader.prototype.loadOrder = 9;
+TestApp_Widget_LoginTab.prototype.loadOrder = 9;
 
 /**
  * This method is used by the Widget Controller to inicialize the widget. 
  */
-Widget_AjaxImageUploader.prototype._doInit = function() {
+TestApp_Widget_LoginTab.prototype._doInit = function() {
 	var _mthis = this;
 	
 	$('.app_ajaxImageUploader').each(function(){
@@ -53,4 +53,4 @@ Widget_AjaxImageUploader.prototype._doInit = function() {
 	});
 };
 
-app.widgets.loadWidget(new Widget_AjaxImageUploader());
+myApp.widgets.loadWidget(new TestApp_Widget_LoginTab());
