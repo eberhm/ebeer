@@ -26,9 +26,7 @@ Application.prototype.init = function() {
 
     this.widgets = new Manager_Widget();
     
-    this.users = new Collection(function(id) {
-    	return new Model_User(id);
-    });
+    this.users = new Collection(Model_User);
 };
 
 /**

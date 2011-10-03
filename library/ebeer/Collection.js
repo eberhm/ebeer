@@ -2,10 +2,7 @@
 /**
  * ebeer-MVC
  *
- * @version    $Id: Collection.js 33369 2010-03-24 11:35:41Z iargent $
- * @category   Gsi
  * @package    Controller
- * @copyright  (c) Copyright ebeer-MVC.
  * @link       
  */
 /**
@@ -27,13 +24,23 @@
 * @constructor
 */
 
-function Collection(createFunction){
-	if (!(createFunction instanceof Function)) {
-		app.log('The create function is not a function', 'ERROR');
+var Collection = function(model){
+	if (!(model instanceof Function)) {
+		throw 'The model parameter is not function';
 	}
 	
+	this.model = model || Model;
 	this.createElement = createFunction;
 	this.reset();
+};
+
+/**
+* Creates an instance of the object
+* 
+* @return Model
+*/
+Collection.prototype.createElement = function(id) {
+	return new this.model(id);
 };
 
 	/**
@@ -116,13 +123,4 @@ Collection.prototype.getElement = function(id, createOnNotFound){
 	*/
 Collection.prototype.reset = function(){
 		this.elements = new Array();
-	};
-	
-/**
-* Creates an instance of the object
-* 
-* @return Model
-*/
-Collection.prototype.createElement = function(id){
-		return new Model(id);
 	};
