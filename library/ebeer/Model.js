@@ -10,3 +10,12 @@ Model.prototype.getElement = function(id) {
 		return false;
 	}
 };
+
+Model.prototype.set = function(key, value) {
+	eval('this.'+key+'='+value);
+	$(this).trigger('change');
+};
+
+Model.prototype.get = function(key) {
+	return eval('this.'+key);
+};

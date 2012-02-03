@@ -15,18 +15,18 @@
  * @package Model
  * @constructor
  */
-var TestApp_Model_User = function(id) {
+var Examples_Model_TodoItem = function(id) {
     this.id = id;
-    this.name = null;
-    this.surname = null;
+    this.title = null;
+    this.description = null;
 };
 
-TestApp_Model_User.prototype = new Model();
+Examples_Model_TodoItem.prototype = new Model();
 
 /**
  * 
  */
-TestApp_Model_User.prototype.logout = function(callback) {
+Examples_Model_TodoItem.prototype.logout = function(callback) {
 
 	var _mthis = this;
 	var callback = callback || function(){};
@@ -49,7 +49,7 @@ TestApp_Model_User.prototype.logout = function(callback) {
 /**
  * This function is used to make an asyncronious call to the server in order to log in a user.
  */
-TestApp_Model_User.prototype.login = function(serializedFields) {
+Examples_Model_TodoItem.prototype.login = function(serializedFields) {
 	var _mthis = this;
 	var responseBack = null;
 	
@@ -78,27 +78,27 @@ TestApp_Model_User.prototype.login = function(serializedFields) {
 /**
  * 
  */
-TestApp_Model_User.prototype.setName = function(aName) {
-	this.name = aName;
+Examples_Model_TodoItem.prototype.setTitle = function(aName) {
+	this. = aName;
 };
 
 /**
  * 
  */
-TestApp_Model_User.prototype.setSurname = function(aSurname) {
+Examples_Model_TodoItem.prototype.setSurname = function(aSurname) {
 	this.surname = aSurname;
 };
 
 /**
  * 
  */
-TestApp_Model_User.prototype.getName = function() {
+Examples_Model_TodoItem.prototype.getName = function() {
 	return this.name;
 };
 
 /**
  * 
  */
-TestApp_Model_User.prototype.getSurname = function() {
+Examples_Model_TodoItem.prototype.getSurname = function() {
 	return this.surname;
 };

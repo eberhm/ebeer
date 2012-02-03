@@ -1,17 +1,17 @@
 var MyApp = (function() {
-	var TestApp_Application = function() {
+	var Examples_Application = function() {
 	    this.init();
 	};
 	
-	TestApp_Application.prototype = new Application();
+	Examples_Application.prototype = new Application();
 	
 	/**
 	*Initiates the Object
 	*/
-	TestApp_Application.prototype.init = function() {
+	Examples_Application.prototype.init = function() {
 	
 		//here my bootstrap code
 	};
 	
-	return var app = new TestApp_Application();
+	return var app = new Examples_Application();
 }).call(this);
