@@ -1,23 +1,13 @@
 <?php
 class Ebeer
 {
-    protected static $_js = array();
-    protected static $_applicationName = 'app';
-    
-    protected static $_coreFiles = array(
-        '/library/ebeer/Collection.js' => true,
-        '/library/ebeer/Model.js' => true,
-        '/library/ebeer/Logger.js' => true,
-        '/library/ebeer/Widget.js' => true,
-        //'/library/ebeer/Manager/Dictionary.js' => true,
-        '/library/ebeer/Manager/Widget.js' => true,
-        '/library/ebeer/Application.js' => true,
-    );
+    private static $_js = array();
+    private static $_appName = 'exampleApp';
 
     /**
      * Manages JS Files
      *
-     * @return Elege_View_Helper_Common_Js_Js
+     * @return Ebeer
      */
     public static function requireJs($fullPathTofile)
     {
@@ -27,25 +17,45 @@ class Ebeer
     
     public static function initApp()
     {
-        
-        $labPath = '/library/LABjs/LAB.min.js';
+        /*
+        <script type="text/javascript">
+            //this script is generated in the server side
+            require(
+                [
+                    //main is always needed
+                    'app/main',
+                    //here the list of widgets you may want to load.
+                    'app/Widget/TodoList'
+                ],
+                function(app) {
+                    app.widgets.initAll();
 
-        $out = array('<script src="' . $labPath . '" type="text/javascript"></script>');
+                    //we normally set myApp as global for debugging purposes.
+                    //in prod you can comment this line
+                    myApp = app;
+                }
+            );
+        </script>
+         */
+        $requirePath = 'scripts/require/require.js';
+
+        $out = array('<script src="' . $requirePath . '" type="text/javascript"></script>');
         $out[] = '<script type="text/javascript">';
-        $out[] = '$LAB';
 
-        $outJs = array();
-        foreach (array_merge(static::$_coreFiles, static::$_js) as $link) {
-            $outJs[] = '.script("' . $link . '").wait()';
+        $out[] = 'require.config({baseUrl:"/scripts"});';
+
+        $outJs = array('require(["'. self::$_appName .'/main"');
+        foreach (static::$_js as $module => $added) {
+            $outJs[] = '"'.$module.'"';
         }
 
-        $out[] = implode('' . PHP_EOL, $outJs);
-        $out[] = '.wait(function(){
-            try{
-                ' . $self::_applicationName . '.widgets.initAll();
-            } catch (e) {
-            }
-        });';
+        $out[] = implode(', ' . PHP_EOL, $outJs);
+        $out[] = '], function(app) {
+                app.widgets.initAll();
+                //we normally set myApp as global for debugging purposes.
+                //in prod you can comment this line
+                myApp = app;
+            });';
         $out[] = '</script>';
 
         return implode(PHP_EOL, $out);
